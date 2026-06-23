@@ -1,7 +1,8 @@
-const ASSET_VERSION = "v5";
+const ASSET_VERSION = "v6";
 const CACHE_NAME = `fly-patterns-offline-${ASSET_VERSION}`;
 const BASE_PATH = new URL(self.registration.scope).pathname;
 const APP_SHELL = `${BASE_PATH}index.html`;
+const NETWORK_TIMEOUT_MS = 1500;
 
 const OFFLINE_ASSETS = [
   "./",
@@ -62,6 +63,30 @@ function assetUrl(path) {
   return new URL(path, self.registration.scope).toString();
 }
 
+async function fetchWithTimeout(request) {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), NETWORK_TIMEOUT_MS);
+
+  try {
+    return await fetch(request, { signal: controller.signal });
+  } finally {
+    clearTimeout(timeout);
+  }
+}
+
+async function cacheResponse(request, response) {
+  if (!response || !response.ok) {
+    return;
+  }
+
+  const cache = await caches.open(CACHE_NAME);
+  await cache.put(request, response.clone());
+}
+
+async function cachedResponse(request) {
+  return caches.match(request).then((cached) => cached || Response.error());
+}
+
 self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME)
@@ -89,32 +114,23 @@ self.addEventListener("fetch", (event) => {
   }
 
   if (request.mode === "navigate") {
-    const networkRefresh = fetch(request)
-      .then(async (response) => {
-        if (response.ok) {
-          const copy = response.clone();
-          const cache = await caches.open(CACHE_NAME);
-          await cache.put(APP_SHELL, copy);
-        }
-        return response;
-      });
-
     event.respondWith(
-      caches.match(APP_SHELL)
-        .then((cached) => cached || networkRefresh)
-        .catch(() => networkRefresh)
+      fetchWithTimeout(request)
+        .then((response) => {
+          event.waitUntil(cacheResponse(APP_SHELL, response));
+          return response;
+        })
+        .catch(() => cachedResponse(APP_SHELL))
     );
-
-    event.waitUntil(networkRefresh.catch(() => undefined));
     return;
   }
 
   event.respondWith(
-    caches.match(request)
-      .then((cached) => cached || fetch(request).then((response) => {
-        const copy = response.clone();
-        caches.open(CACHE_NAME).then((cache) => cache.put(request, copy));
+    fetchWithTimeout(request)
+      .then((response) => {
+        event.waitUntil(cacheResponse(request, response));
         return response;
-      }))
+      })
+      .catch(() => cachedResponse(request))
   );
 });
