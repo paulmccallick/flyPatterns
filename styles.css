@@ -1,0 +1,339 @@
+:root {
+  --ink: #17201d;
+  --muted: #60706a;
+  --paper: #f4f5ef;
+  --panel: #fbfcf7;
+  --line: #d6ddd5;
+  --river: #1f6d7a;
+  --river-deep: #0d3f49;
+  --moss: #607b4f;
+  --amber: #d16d2f;
+  --shadow: 0 18px 44px rgba(18, 35, 32, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background:
+    linear-gradient(180deg, rgba(31, 109, 122, 0.05), transparent 19rem),
+    linear-gradient(180deg, #f7f8f3 0%, #eef2ec 100%);
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  border-bottom: 1px solid rgba(18, 35, 32, 0.12);
+  background: rgba(247, 248, 243, 0.92);
+  backdrop-filter: blur(14px);
+}
+
+.brand {
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  gap: 12px;
+  align-items: center;
+  padding: 14px 16px 10px;
+}
+
+.brand-mark {
+  width: 42px;
+  height: 42px;
+  border: 2px solid var(--river);
+  border-radius: 50%;
+  background:
+    linear-gradient(145deg, transparent 42%, var(--river) 43% 48%, transparent 49%),
+    radial-gradient(circle at 68% 34%, var(--amber) 0 4px, transparent 5px),
+    var(--panel);
+  box-shadow: inset 0 0 0 5px rgba(31, 109, 122, 0.08);
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+h1 {
+  font-size: clamp(1.22rem, 5.4vw, 2rem);
+  line-height: 1;
+  letter-spacing: 0;
+  font-weight: 800;
+}
+
+.brand p {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 0.8rem;
+  line-height: 1.25;
+}
+
+.insect-nav {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  padding: 0 12px 12px;
+}
+
+.insect-nav a {
+  min-height: 38px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(31, 109, 122, 0.2);
+  border-radius: 999px;
+  color: var(--river-deep);
+  background: rgba(251, 252, 247, 0.86);
+  font: 700 0.82rem/1.1 "Helvetica Neue", Helvetica, sans-serif;
+  text-decoration: none;
+}
+
+.app {
+  width: min(1120px, 100%);
+  margin: 0 auto;
+  padding: 18px 12px 42px;
+}
+
+.insect-section {
+  scroll-margin-top: 116px;
+  margin-bottom: 34px;
+}
+
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 16px 4px 12px;
+}
+
+.section-heading h2 {
+  font-size: clamp(1.85rem, 10vw, 4.1rem);
+  line-height: 0.95;
+  letter-spacing: 0;
+  font-weight: 800;
+}
+
+.stage-count {
+  flex: 0 0 auto;
+  color: var(--river-deep);
+  font: 750 0.68rem/1 "Helvetica Neue", Helvetica, sans-serif;
+  text-transform: uppercase;
+}
+
+.stage-row {
+  display: grid;
+  grid-template-columns: 118px minmax(0, 1fr);
+  gap: 10px;
+  align-items: stretch;
+  margin-bottom: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: rgba(251, 252, 247, 0.9);
+  box-shadow: 0 8px 24px rgba(18, 35, 32, 0.06);
+  overflow: hidden;
+}
+
+.stage-insect {
+  min-width: 0;
+  border-right: 1px solid var(--line);
+  background: #e7eee7;
+}
+
+.insect-image {
+  height: 118px;
+  display: grid;
+  place-items: center;
+  border-bottom: 1px solid rgba(23, 33, 28, 0.08);
+  background:
+    linear-gradient(135deg, rgba(31, 109, 122, 0.08), transparent 42%),
+    #edf3ed;
+}
+
+.stage-insect img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 7px;
+  mix-blend-mode: multiply;
+}
+
+.stage-title {
+  min-height: 48px;
+  display: grid;
+  align-content: center;
+  padding: 8px;
+  font: 750 0.72rem/1.1 "Helvetica Neue", Helvetica, sans-serif;
+  color: var(--river-deep);
+}
+
+.pattern-panel {
+  min-width: 0;
+  padding: 10px;
+}
+
+.patterns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.pattern-card {
+  min-width: 0;
+  border: 1px solid rgba(23, 33, 28, 0.12);
+  border-radius: 8px;
+  background: #fcfdf9;
+  overflow: hidden;
+}
+
+.pattern-card img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: contain;
+  background: #eef2eb;
+  padding: 4px;
+}
+
+.pattern-meta {
+  min-height: 52px;
+  display: grid;
+  align-content: center;
+  gap: 5px;
+  padding: 7px 8px;
+}
+
+.pattern-name {
+  font: 700 0.72rem/1.15 "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.pattern-method {
+  width: max-content;
+  max-width: 100%;
+  border: 1px solid rgba(23, 33, 28, 0.12);
+  border-radius: 999px;
+  padding: 3px 7px;
+  font: 800 0.58rem/1 "Helvetica Neue", Helvetica, sans-serif;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.pattern-dry .pattern-method {
+  color: #5e3d0b;
+  background: #f3d49a;
+}
+
+.pattern-wet .pattern-method {
+  color: var(--river-deep);
+  background: #c9d8d6;
+}
+
+.pattern-streamer .pattern-method {
+  color: #f7f1e5;
+  background: #3b3f35;
+}
+
+.empty-patterns {
+  height: 100%;
+  min-height: 96px;
+  display: grid;
+  place-items: center;
+  border: 1px dashed rgba(49, 94, 100, 0.34);
+  border-radius: 8px;
+  color: var(--muted);
+  text-align: center;
+  font: 700 0.82rem/1.3 "Helvetica Neue", Helvetica, sans-serif;
+  padding: 14px;
+}
+
+.missing-image {
+  width: 100%;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+  background:
+    linear-gradient(135deg, transparent 0 46%, rgba(49, 94, 100, 0.22) 47% 53%, transparent 54%),
+    #eee5d3;
+  font: 750 0.68rem/1 "Helvetica Neue", Helvetica, sans-serif;
+  text-transform: uppercase;
+}
+
+@media (min-width: 680px) {
+  .topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 18px;
+  }
+
+  .brand {
+    padding: 16px 22px;
+  }
+
+  .insect-nav {
+    width: 390px;
+    padding: 0;
+  }
+
+  .app {
+    padding: 30px 22px 70px;
+  }
+
+  .insect-section {
+    scroll-margin-top: 88px;
+  }
+
+  .stage-row {
+    grid-template-columns: 210px minmax(0, 1fr);
+    gap: 0;
+    margin-bottom: 16px;
+  }
+
+  .insect-image {
+    height: 172px;
+  }
+
+  .stage-title {
+    min-height: 58px;
+    padding: 12px;
+    font-size: 0.92rem;
+  }
+
+  .pattern-panel {
+    padding: 14px;
+  }
+
+  .patterns {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .pattern-name {
+    min-height: 44px;
+    font-size: 0.82rem;
+  }
+}
+
+@media (min-width: 980px) {
+  .stage-row {
+    grid-template-columns: 250px minmax(0, 1fr);
+  }
+
+  .insect-image {
+    height: 190px;
+  }
+}
