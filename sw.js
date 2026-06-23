@@ -1,4 +1,4 @@
-const ASSET_VERSION = "v4";
+const ASSET_VERSION = "v5";
 const CACHE_NAME = `fly-patterns-offline-${ASSET_VERSION}`;
 const BASE_PATH = new URL(self.registration.scope).pathname;
 const APP_SHELL = `${BASE_PATH}index.html`;
@@ -9,9 +9,9 @@ const OFFLINE_ASSETS = [
   "./styles.css",
   "./app.js",
   "./site.webmanifest?v=2",
-  "./icons/app-icon.svg?v=2",
-  "./icons/app-icon-192.png?v=2",
-  "./icons/app-icon-512.png?v=2",
+  "./icons/app-icon-v2.svg",
+  "./icons/app-icon-v2-192.png",
+  "./icons/app-icon-v2-512.png",
   "./images/imitations/caddisfly/adult/cdc-and-elk.jpg",
   "./images/imitations/caddisfly/adult/elk-hair-caddis.webp",
   "./images/imitations/caddisfly/adult/henryville-special.jpg",
