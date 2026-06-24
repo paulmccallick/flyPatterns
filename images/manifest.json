@@ -350,6 +350,18 @@
     "kind": "imitation",
     "group": "stonefly",
     "stage": "adult",
+    "label": "Golden Stone",
+    "file": "/Users/paulmccallick/Documents/flyPatterns/images/imitations/stonefly/adult/golden-stone.jpg",
+    "source_page": "https://bigyflyco.com/products/brooks-golden-stone",
+    "source_image": "https://cdn.shopify.com/s/files/1/0696/9874/8700/products/Brooks_Golden_Stone.jpg?v=1685020749",
+    "source_title": "Brooks Golden Stone",
+    "source_type": "web product image",
+    "license": "Usage rights not verified; source page copyright applies"
+  },
+  {
+    "kind": "imitation",
+    "group": "stonefly",
+    "stage": "adult",
     "label": "Parks' Salmonfly",
     "query": "Parks Salmonfly",
     "file": "/Users/paulmccallick/Documents/flyPatterns/images/imitations/stonefly/adult/parks-salmonfly.jpg",
@@ -371,6 +383,18 @@
     "source_page": "https://bigyflyco.com/products/rogue-foam-salmonfly",
     "source_image": "https://cdn.shopify.com/s/files/1/0696/9874/8700/products/Rogue_Foam_Salmonfly_20_1_20of_201_8de7d978-03ca-4473-a000-eea8222a92d3.jpg?v=1684933460",
     "source_title": "Rogue Foam Golden Stonefly",
+    "source_type": "web product image",
+    "license": "Usage rights not verified; source page copyright applies"
+  },
+  {
+    "kind": "imitation",
+    "group": "stonefly",
+    "stage": "adult",
+    "label": "Yellow Sally",
+    "file": "/Users/paulmccallick/Documents/flyPatterns/images/imitations/stonefly/adult/yellow-sally.jpg",
+    "source_page": "https://bigyflyco.com/products/yellow-sally",
+    "source_image": "https://cdn.shopify.com/s/files/1/0696/9874/8700/products/Yellow_Sally.jpg?v=1685019468",
+    "source_title": "Yellow Sally",
     "source_type": "web product image",
     "license": "Usage rights not verified; source page copyright applies"
   },

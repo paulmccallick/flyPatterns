@@ -1,4 +1,4 @@
-const ASSET_VERSION = "v8";
+const ASSET_VERSION = "v9";
 const CACHE_NAME = `fly-patterns-offline-${ASSET_VERSION}`;
 const BASE_PATH = new URL(self.registration.scope).pathname;
 const APP_SHELL = `${BASE_PATH}index.html`;
@@ -41,6 +41,8 @@ const OFFLINE_ASSETS = [
   "./images/imitations/mayfly/spinner/rusty-spinner.webp",
   "./images/imitations/mayfly/spinner/trico-spinner.webp",
   "./images/imitations/stonefly/adult/chubby-chernobyl-tan.jpg",
+  "./images/imitations/stonefly/adult/golden-stone.jpg",
+  "./images/imitations/stonefly/adult/yellow-sally.jpg",
   "./images/imitations/stonefly/adult/parks-salmonfly.jpg",
   "./images/imitations/stonefly/adult/rogue-foam-stone.jpg",
   "./images/imitations/stonefly/adult/sofa-pillow.jpg",

@@ -109,6 +109,8 @@ const insects = [
         insect: "images/insects/stonefly/adult/stonefly-adult.png",
         patterns: [
           ["Chubby Chernobyl", "images/imitations/stonefly/adult/chubby-chernobyl-tan.jpg", "Dry"],
+          ["Golden Stone", "images/imitations/stonefly/adult/golden-stone.jpg", "Dry"],
+          ["Yellow Sally", "images/imitations/stonefly/adult/yellow-sally.jpg", "Dry"],
           ["Sofa Pillow", "images/imitations/stonefly/adult/sofa-pillow.jpg", "Dry"],
           ["Parks' Salmonfly", "images/imitations/stonefly/adult/parks-salmonfly.jpg", "Dry"],
           ["Rogue Foam Stone", "images/imitations/stonefly/adult/rogue-foam-stone.jpg", "Dry"],

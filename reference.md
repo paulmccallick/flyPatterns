@@ -1,6 +1,6 @@
 # Fly Pattern Lifecycle Reference
 
-This file summarizes fishing-relevant lifecycle stages and representative fly patterns for caddisflies, mayflies, and stoneflies. Pattern lists are intentionally limited to common Washington and Idaho trout patterns, with no more than four patterns per stage.
+This file summarizes fishing-relevant lifecycle stages and representative fly patterns for caddisflies, mayflies, and stoneflies. Pattern lists are intentionally limited to common Washington and Idaho trout patterns.
 
 Method labels:
 
@@ -143,6 +143,8 @@ Representative fly patterns:
 | Pattern | Method |
 | --- | --- |
 | Chubby Chernobyl | Dry |
+| Golden Stone | Dry |
+| Yellow Sally | Dry |
 | Sofa Pillow | Dry |
 | Parks' Salmonfly | Dry |
 | Rogue Foam Stone | Dry |
