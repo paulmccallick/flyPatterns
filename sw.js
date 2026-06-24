@@ -1,4 +1,4 @@
-const ASSET_VERSION = "v10";
+const ASSET_VERSION = "v11";
 const CACHE_NAME = `fly-patterns-offline-${ASSET_VERSION}`;
 const BASE_PATH = new URL(self.registration.scope).pathname;
 const APP_SHELL = `${BASE_PATH}index.html`;
@@ -7,7 +7,7 @@ const NETWORK_TIMEOUT_MS = 1500;
 const OFFLINE_ASSETS = [
   "./",
   "./index.html",
-  "./styles.css",
+  "./styles.css?v=2",
   "./app.js",
   "./site.webmanifest?v=2",
   "./icons/app-icon-v2.svg",
