@@ -181,17 +181,22 @@ h1 {
 }
 
 .patterns {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  display: flex;
   gap: 8px;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity;
+  scrollbar-width: thin;
+  padding-bottom: 4px;
 }
 
 .pattern-card {
-  min-width: 0;
+  flex: 0 0 min(42vw, 156px);
   border: 1px solid rgba(23, 33, 28, 0.12);
   border-radius: 8px;
   background: #fcfdf9;
   overflow: hidden;
+  scroll-snap-align: start;
 }
 
 .pattern-card img {
@@ -312,8 +317,11 @@ h1 {
   }
 
   .patterns {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 12px;
+  }
+
+  .pattern-card {
+    flex-basis: 160px;
   }
 
   .pattern-name {

@@ -1,4 +1,4 @@
-const ASSET_VERSION = "v9";
+const ASSET_VERSION = "v10";
 const CACHE_NAME = `fly-patterns-offline-${ASSET_VERSION}`;
 const BASE_PATH = new URL(self.registration.scope).pathname;
 const APP_SHELL = `${BASE_PATH}index.html`;
